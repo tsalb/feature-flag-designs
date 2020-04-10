@@ -10,3 +10,6 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# https://github.com/forcedotcom/cli/issues/205
+Account.app
