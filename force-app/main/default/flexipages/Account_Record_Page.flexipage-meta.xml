@@ -122,6 +122,10 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentInstanceProperties>
+                <name>apexClassName</name>
+                <value>SomeClass</value>
+            </componentInstanceProperties>
             <componentName>apexCaller</componentName>
         </componentInstances>
         <mode>Replace</mode>
@@ -151,6 +155,36 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>apexClassName</name>
+                <value>SomeOtherClass</value>
+            </componentInstanceProperties>
+            <componentName>apexCaller</componentName>
+        </componentInstances>
+        <name>Facet-6a2b3a69-01a6-4915-88ae-72c4838c6630</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>active</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>Facet-6a2b3a69-01a6-4915-88ae-72c4838c6630</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Feature Two</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
+        <name>Facet-08885ed2-d42f-4dc7-89d1-331495221ff4</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
                 <name>tabs</name>
                 <value>sidebartabs</value>
             </componentInstanceProperties>
@@ -158,6 +192,20 @@
             <visibilityRule>
                 <criteria>
                     <leftValue>{!$Permission.CustomPermission.Feature_One}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>true</rightValue>
+                </criteria>
+            </visibilityRule>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>tabs</name>
+                <value>Facet-08885ed2-d42f-4dc7-89d1-331495221ff4</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tabset</componentName>
+            <visibilityRule>
+                <criteria>
+                    <leftValue>{!$Permission.CustomPermission.Feature_Two}</leftValue>
                     <operator>EQUAL</operator>
                     <rightValue>true</rightValue>
                 </criteria>
