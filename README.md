@@ -61,7 +61,7 @@ Notice that there are two currently configured component visibilities in `Setup`
 
 Here we see the lowest complexity which uses `FeatureDecisions` to help aggregate the various permissions a user has access to at runtime.
 
-The code is still routable but as you can see, it's not ideal except for the simplest of use cases.
+The code is still route-able but as you can see, it's not ideal except for the simplest of use cases.
 
 ```java
 public with sharing class SomeClass {
@@ -104,7 +104,7 @@ public with sharing class SomeOtherClass {
     public static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
-     * This example uses runtime (depndency injected) apex methods but a compiled dependency on the class.
+     * This example uses runtime (dependency injected) apex methods but a compiled dependency on the class.
      *
      * Pros: Easy to implement and read. Abstracts away minor-medium changing implementation to the Callable class
      *       Best for small-medium features that need just method routing and not the entire class re-configured.

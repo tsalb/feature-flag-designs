@@ -2,7 +2,7 @@ public with sharing class SomeOtherClass {
     public static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
-     * This example uses runtime (depndency injected) apex methods but a compiled dependency on the class.
+     * This example uses runtime (dependency injected) apex methods but a compiled dependency on the class.
      *
      * Pros: Easy to implement and read. Abstracts away minor-medium changing implementation to the Callable class
      *       Best for small-medium features that need just method routing and not the entire class re-configured.
