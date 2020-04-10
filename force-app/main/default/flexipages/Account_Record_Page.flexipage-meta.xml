@@ -128,6 +128,13 @@
             </componentInstanceProperties>
             <componentName>apexCaller</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>apexClassName</name>
+                <value>SomeOtherClass</value>
+            </componentInstanceProperties>
+            <componentName>apexCaller</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>activityTabContent</name>
         <type>Facet</type>
@@ -153,6 +160,13 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>apexClassName</name>
+                <value>SomeClass</value>
+            </componentInstanceProperties>
+            <componentName>apexCaller</componentName>
+        </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
                 <name>apexClassName</name>
