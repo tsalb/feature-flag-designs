@@ -1,6 +1,6 @@
 # Feature Flag Designs
 
-This repo shows a few flag design patterns while demonstrating their utility both client and serverside.
+This repo highlights different design patterns to tackle feature flags using Custom Permissions in both the UI and Apex.
 
 ## Install with SFDX
 
