@@ -47,7 +47,7 @@ And moving forward, when Dynamic Forms (or whatever they call it) gets released 
 
 Imagine a custom permission being toggled that will show the user an entire new suite of fields to data enter - no more binding to page layouts and/or record types!
 
-In the scratch org, navigate to any Account record and see the following:
+In the scratch org, navigate to the default `Sales` app and any `Account` record and see the following:
 
 ![account-record](/readme-images/account-one.png?raw=true)
 
