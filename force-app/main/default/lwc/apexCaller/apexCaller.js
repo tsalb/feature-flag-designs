@@ -4,6 +4,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 // Static list of all variations, we just want something easy for demoing
 import getDataSimple from '@salesforce/apex/Simple.getDataSimple';
 import getDataComplex from '@salesforce/apex/Complex.getDataComplex';
+import getDataInjected from '@salesforce/apex/Injected.getData';
 
 export default class ApexCaller extends LightningElement {
     @api recordId;
@@ -19,6 +20,9 @@ export default class ApexCaller extends LightningElement {
                     break;
                 case 'Complex':
                     message = await getDataComplex({ recordId: this.recordId });
+                    break;
+                case 'Injected':
+                    message = await getDataInjected({ recordId: this.recordId });
                     break;
                 default:
                     // Nothing
