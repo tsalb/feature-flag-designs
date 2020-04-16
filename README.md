@@ -180,10 +180,18 @@ public class Injected {
 
     @AuraEnabled
     public static String getDataForFeatureTwo() {
-        FeatureTwoImplementation featureTwoService = (FeatureTwoImplementation) service;
-        return featureTwoService.getDataForFeatureTwo();
+        if (service instanceof FeatureTwoImplementation) {
+            FeatureTwoImplementation serviceTwo = (FeatureTwoImplementation) service;
+            return serviceTwo.getDataForFeatureTwo();
+        } else {
+            throw new FeatureAccessException('Running user has no access to FeatureTwoImplementation');
+        }
+    }
+
+    public class FeatureAccessException extends Exception {
     }
 }
+
 ```
 
 ## LWC Utilization
