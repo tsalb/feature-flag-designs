@@ -1,4 +1,4 @@
-public with sharing class DataService implements Callable {
+public inherited sharing class DataService implements Callable {
     // Actual methods
     String versionOne(Id recordId) {
         return [SELECT Name FROM Contact WHERE AccountId = :recordId LIMIT 1].Name.toLowerCase();

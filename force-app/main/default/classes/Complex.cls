@@ -1,5 +1,5 @@
-public with sharing class Complex {
-    public static final FeatureDecisions featureDecisions = new FeatureDecisions();
+public class Complex {
+    private static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
      * This example uses runtime (dependency injected) apex methods but a compiled dependency on the class.

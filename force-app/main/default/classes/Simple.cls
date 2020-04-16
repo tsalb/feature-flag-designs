@@ -1,5 +1,5 @@
-public with sharing class Simple {
-    public static final FeatureDecisions featureDecisions = new FeatureDecisions();
+public class Simple {
+    private static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
      * This example uses a runtime compiled list of feature flags against the current running user
