@@ -79,7 +79,7 @@ Here we see the lowest complexity which uses `FeatureDecisions` to help aggregat
 The code is still route-able but as you can see, it's not ideal except for the simplest of use cases.
 
 ```java
-public with sharing class Simple {
+public class Simple {
     public static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
@@ -115,7 +115,7 @@ Then next level up is to introduce the concept of Dependency Injection (aka DI o
 This is still one step away from full DI where the actual `DataService.cls` gets abstracted away but it nets some benefits in that the runtime method called is configurable through custom permissions (in this example) or could also be controlled through custom metadata (not shown).
 
 ```java
-public with sharing class Complex {
+public class Complex {
     public static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
@@ -147,7 +147,7 @@ public class Injected {
     private static final FeatureService service = FeatureInjector.getLatestService();
 
     /**
-     * This example uses runtime (dependency injected) service call based logic from the FeatureInjector class
+     * This example uses runtime (dependency injected) service call based logic from the `FeatureInjector` class
      *
      * Pros: Abstraction is reliant on logic inside `FeatureInjector` and how it allocates what is defined as the "Latest"
      *       service to provide to the currently running user based on `FeatureDecisions` inside the injector class.

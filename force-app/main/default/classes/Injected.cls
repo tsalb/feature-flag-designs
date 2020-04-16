@@ -2,7 +2,7 @@ public class Injected {
     private static final FeatureService service = FeatureInjector.getLatestService();
 
     /**
-     * This example uses runtime (dependency injected) service call based logic from the FeatureInjector class
+     * This example uses runtime (dependency injected) service call based logic from the `FeatureInjector` class
      *
      * Pros: Abstraction is reliant on logic inside `FeatureInjector` and how it allocates what is defined as the "Latest"
      *       service to provide to the currently running user based on `FeatureDecisions` inside the injector class.
