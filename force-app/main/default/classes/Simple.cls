@@ -1,4 +1,4 @@
-public with sharing class SomeClass {
+public with sharing class Simple {
     public static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**

@@ -2,8 +2,8 @@ import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 // Static list of all variations, we just want something easy for demoing
-import getDataSimple from '@salesforce/apex/SomeClass.getDataSimple';
-import getDataComplex from '@salesforce/apex/SomeOtherClass.getDataComplex';
+import getDataSimple from '@salesforce/apex/Simple.getDataSimple';
+import getDataComplex from '@salesforce/apex/Complex.getDataComplex';
 
 export default class ApexCaller extends LightningElement {
     @api recordId;
@@ -14,10 +14,10 @@ export default class ApexCaller extends LightningElement {
 
         if (this.apexClassName) {
             switch (this.apexClassName) {
-                case 'SomeClass':
+                case 'Simple':
                     message = await getDataSimple();
                     break;
-                case 'SomeOtherClass':
+                case 'Complex':
                     message = await getDataComplex({ recordId: this.recordId });
                     break;
                 default:

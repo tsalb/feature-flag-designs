@@ -124,14 +124,14 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>apexClassName</name>
-                <value>SomeClass</value>
+                <value>Simple</value>
             </componentInstanceProperties>
             <componentName>apexCaller</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
                 <name>apexClassName</name>
-                <value>SomeOtherClass</value>
+                <value>Complex</value>
             </componentInstanceProperties>
             <componentName>apexCaller</componentName>
         </componentInstances>
