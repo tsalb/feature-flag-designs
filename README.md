@@ -2,6 +2,13 @@
 
 This repo highlights different design patterns to tackle feature flags using Custom Permissions in both the UI and Apex.
 
+## Useful Publications
+
+This repo distills strategies and design patterns found in:
+
+-   Martin Fowler's [Feature Toggle](https://martinfowler.com/articles/feature-toggles.html) article.
+-   Philippe Ozil's [Dependency Injection SFDC Dev Blog](https://developer.salesforce.com/blogs/2019/07/breaking-runtime-dependencies-with-dependency-injection.html) and his accompanying [sample code repo](https://github.com/pozil/apex-dependency-injection).
+
 ## Install with SFDX
 
 For VSCode and SFDX setup see steps (1 and 2) from the [official lwc-recipes repo](https://github.com/trailheadapps/lwc-recipes#installing-recipes-using-salesforce-dx). Once you have the SFDX CLI set up and Authed into a Dev Hub you can then:
@@ -19,6 +26,14 @@ git clone https://github.com/tsalb/feature-flag-designs
 4. Use Command Palette to `SFDX: Push Source to Default Scratch Org`.
 
 5. Use Command Palette to `SFDX: Open Default Org`.
+
+## Custom Metadata or Custom Permission?
+
+Custom metadata cannot be exposed to the flexipage, so leveraging those are more fitting for server-side only toggling as shown in pozil's sample repo [here](https://github.com/pozil/apex-dependency-injection/blob/290eacd69b4e8e11634cc7cb86479c8a61d8cf5f/src/main/default/classes/ShippingInjector.cls#L69). It's possible to combine both for increased cognitive complexity but also improved maintainability since separation of concerns is more dynamic.
+
+If there is a large feature that needs both UI and apex toggles, then marrying them to one to a custom permission makes sense unless there is some level of dynamic logic happening regardless of permissiveness / accessibility to a UI gate or functional gate.
+
+In short, Custom Metadata applies better for global dynamic logic whereas Custom Perms scoped to profile/user.
 
 ## Sample Custom Permissions
 
@@ -43,7 +58,7 @@ Component visibility in general is an easy way to configure the dynamic visibili
 -   Current User's attributes (Profile, etc)
 -   Custom Permissions
 
-And moving forward, when Dynamic Forms (or whatever they call it) gets released and component visibility comes down to the field level - having the flexibility of custom permissions governing how a Flexipage's record detail/form is composed will be even more useful.
+And moving forward, when Dynamic Forms gets GA-ed and the flexipage's [component visibility](https://help.salesforce.com/articleView?id=lightning_page_components_visibility.htm&type=5) comes down to the field level - having the flexibility of custom permissions governing how a record detail/form is composed will be even more useful.
 
 Imagine a custom permission being toggled that will show the user an entire new suite of fields to data enter - no more binding to page layouts and/or record types!
 
@@ -64,7 +79,7 @@ Here we see the lowest complexity which uses `FeatureDecisions` to help aggregat
 The code is still route-able but as you can see, it's not ideal except for the simplest of use cases.
 
 ```java
-public with sharing class SomeClass {
+public with sharing class Simple {
     public static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
@@ -100,7 +115,7 @@ Then next level up is to introduce the concept of Dependency Injection (aka DI o
 This is still one step away from full DI where the actual `DataService.cls` gets abstracted away but it nets some benefits in that the runtime method called is configurable through custom permissions (in this example) or could also be controlled through custom metadata (not shown).
 
 ```java
-public with sharing class SomeOtherClass {
+public with sharing class Complex {
     public static final FeatureDecisions featureDecisions = new FeatureDecisions();
 
     /**
