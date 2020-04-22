@@ -64,11 +64,11 @@ Imagine a custom permission being toggled that will show the user an entire new 
 
 In the scratch org, navigate to the default `Sales` app and any `Account` record and see the following:
 
-![account-record](/readme-images/account-one.png?raw=true)
+![account-record](/readme-images/account-flexipage.png?raw=true)
 
-Notice that there are two currently configured component visibilities in `Setup` > `Edit Page` :
+Notice that there are two currently configured component visibilities in `Setup` > `Edit Page`. One targets **Feature One Tab Component** and the other targets **Feature Two Tab Component**
 
-![account-flexipage](/readme-images/account-two.png?raw=true)
+![account-flexipage](/readme-images/account-flexipage-edit.png?raw=true)
 
 ## Apex Utilization
 
